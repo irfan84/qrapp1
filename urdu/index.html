@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pakistan Museum of Natural History (PMNH)</title>
+  <meta name="description" content="Pakistan Museum of Natural History (PMNH)">
+  <meta name="author" content="Irfan Shakeel" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="../css/style1.css">
+  <link rel="stylesheet" media="screen" href="../css/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="../css/mdb.min.css" rel="stylesheet">
+  <style type="text/css">
+    .hd {
+    font-family: "Urdu Nastaliq Unicode";
+    font-size: 13px !important;
+    font-weight: bold;
+  }
+  .cn {
+    font-family: "Urdu Nastaliq Unicode";
+    font-size: 18px !important;
+   
+  }
+
+  .cn1 {
+    font-family: "Urdu Nastaliq Unicode";
+    font-size: 16px !important;
+   
+  }
+  #content{
+  display:none;
+}
+video {
+  width: 70%;
+  height: auto;
+  align-content: center;
+}
+  </style>
+</head>
+<body>
+<header>
+  <!-- Just an image -->
+<nav class="navbar navbar-dark btn-unique" style="justify-content: center;">
+ <img src="../img/logo.png" width="20%" align="center" style="padding-bottom: -20px;">
+  <a class="navbar-brand font-weight-bold mt-2 text-white" href="#" style="font-size:7vw;">
+    <!-- <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt="PMNH"> -->پاکستان میوزیم آف نیچرل ہسٹری
+  </a>
+  <div align="center">
+  <ul class="navbar-nav mr-auto">
+   <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle hd" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          زبان تبدیل کریں
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="../en">English</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>
+<!-- Start particles.js container -->
+<div id="particles-js" style="min-height: 900px;"></div>
+<!-- End particles.js container -->
+
+	<!-- Start Padding -->
+	<div id="mainbody">
+
+
+	<!-- Start Container -->
+	<div class="container-fluid" style="display: flex; justify-content: center;">
+
+
+<!-- Start Row -->
+
+<div class="row">
+
+	<div class="col-sm-5" style="display: flex; justify-content: center">
+
+<div class="card mask rgba-black-light mt-5">
+  <div class="card-body">
+    <button href=""  class="btn btn-unique btl camera cn1" id="toggle"><i class="fas fa-qrcode fa-lg mr-2"></i>اسکین کرنے کے لئےٹیپ کریں</button>
+  </div>
+</div>
+</div>
+
+<div class="col-sm-2" style="display: flex; align-self: center; justify-content: center; margin-top: 20px; margin-bottom: -30px;">
+<h5 class="font-weight-bold mb-3 text-white"><div id="content" align="center"><video id="preview"></video></div></h5>
+</div>
+
+<div class="col-sm-2" style="display: flex; align-self: center; justify-content: center; margin-top: 20px; margin-bottom: -30px;">
+<h5 class="font-weight-bold mb-3 text-white">یا</h5>
+</div>
+
+<div class="col-sm-5">
+<div class="card mask rgba-black-light mt-5 center">
+  <div class="card-body">
+    <!-- <h5 class="font-weight-bold mb-3 text-white"></h5> -->
+
+<form id="form" class="form-inline md-form mr-auto" style="justify-content: center;" onsubmit="return myFunction()">
+          <!-- <input id="display" class="form-control mr-sm-2" type="text" placeholder="Enter Display Number" aria-label="Search"> -->
+           <div class="md-form">
+            <input type="text" id="display" class="form-control white-text">
+            <label for="display">ڈسپلے نمبر درج کریں</label>
+        </div>
+          <button class="btn btn-unique btn-rounded btn-sm my-0 waves-effect waves-light cn1" type="submit">تلاش کریں</button>
+        </form>
+
+<!-- <form id="form" class="form-inline md-form mr-auto" style="justify-content: center;" onsubmit="return myFunction()">
+          <input id="display" class="form-control mr-sm-2" type="text" placeholder="ڈسپلے نمبر درج کریں" aria-label="Search">
+          <button class="btn btn-unique btn-lg my-0 waves-effect waves-light cn" type="submit">تلاش کریں</button>
+        </form> -->
+      </div>
+    </div>
+
+        
+
+	</div>
+</div>
+<!-- End Row -->
+
+	</div>
+<!-- End Container -->
+
+</div>
+<!-- End Padding -->
+
+
+<!-- scripts -->
+<script src="../js/particles.js"></script>
+<script src="../js/app.js"></script>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="../js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="../js/mdb.min.js"></script>
+
+  <script type="text/javascript" src="../js/instascan.min.js"></script>
+
+  <script type="text/javascript">load();</script>
+
+  <script type="text/javascript">
+    var myButton = document.getElementById("toggle");
+    myButton.onclick = function(e) {
+
+      let scanner = new Instascan.Scanner({ backgroundScan: false, mirror: false, video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        window.location.href = content+"u";
+        // alert(content);
+      });
+      Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[1]);
+          scanner.stop();
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+    }
+    </script>
+
+    <script type="text/javascript">
+      function myFunction() {
+        var val = document.getElementById("display").value;
+        if (val.length == 1) {
+        window.location.href = "http://webitech.org/rd/"+"00"+val+"u";
+        return false;
+      }
+      if (val.length == 2) {
+        window.location.href = "http://webitech.org/rd/"+"0"+val+"u";
+        return false;
+      }
+
+      if (val.length == 3) {
+        window.location.href = "http://webitech.org/rd/"+val+"u";
+        return false;
+      }
+
+      }
+    </script>
+
+     <script type="text/javascript">
+var toggle  = document.getElementById("toggle");
+var content = document.getElementById("content");
+
+toggle.addEventListener("click", function() {
+  content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
+});
+</script>
+
+<script type="text/javascript">
+  $('#display').keyup(function(){
+  if ($(this).val() > 9){
+    alert("Display number must be from 1 to 9");
+    $(this).val('');
+  }
+});
+  // $('#display').keypress(function (e) {
+  //       var regex = new RegExp("^[a-zA-Z\s]+$");
+  //       var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+  //       if (regex.test(str)) {
+  //         alert("Alphabets or Spaces are not allowed");
+  //         return false;
+  //       }
+  //     });
+  $('#display').on('input blur paste', function(){
+ $(this).val($(this).val().replace(/\D/g, ''))
+})
+</script>
+</body>
+</html>

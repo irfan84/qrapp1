@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <title>Pakistan Museum of Natural History (PMNH)</title>
+  <meta name="description" content="Pakistan Museum of Natural History (PMNH)">
+  <meta name="author" content="Irfan Shakeel" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style1.css">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <style type="text/css">
+.form-dark .md-form label {
+color: #fff !important;}
+
+#content{
+  display:none;
+}
+video {
+  width: 70%;
+  height: auto;
+  align-content: center;
+}
+</style>
+    
+    <!-- Insert to your webpage before the </head> -->
+    <script src="audioplayerengine/jquery.js"></script>
+    <script src="audioplayerengine/amazingaudioplayer.js"></script>
+    <link rel="stylesheet" type="text/css" href="audioplayerengine/initaudioplayer-1.css">
+    <script src="audioplayerengine/initaudioplayer-1.js"></script>
+    <!-- End of head section HTML codes -->
+    <script type="text/javascript">
+    var url_string = window.location; //window.location.href
+var url = new URL(url_string);
+var c = url.searchParams.get("a");
+var d = url.searchParams.get("b");
+</script>
+</head>
+<body>
+    <header>
+  <!-- Just an image -->
+<nav class="navbar navbar-dark btn-unique" style="justify-content: center;">
+  <img src="img/logo.png" width="20%" align="center" style="padding-bottom: -20px;">
+  <a class="navbar-brand font-weight-bold mt-2 text-white" href="#" style="font-size:5vw;">
+    <!-- <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt="PMNH"> -->Pakistan Museum of Natural History
+  </a>
+  <div align="center">
+  <ul class="navbar-nav mr-auto">
+   <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle hd" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false" style="font-size:4vw;">
+        Change Language   </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="urdu/" style="font-size:4vw;">Urdu</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>
+
+<!-- Start particles.js container -->
+<div id="particles-js" style="min-height: 900px;"></div>
+<!-- End particles.js container -->
+
+<!-- Start Padding -->
+    <div id="mainbody">
+
+<div class="mt-4">
+    <!-- Insert to your webpage where you want to display the audio player -->
+    <div id="amazingaudioplayer-1" style="display:block;position:relative;width:100%;max-width:300px;height:164px;margin:0px auto 0px;">
+        <ul class="amazingaudioplayer-audios" style="display:none;">
+            <li id="data" data-artist="" data-title="" data-album="" data-info="" data-image="" data-duration="">
+                <div id="audio" class="amazingaudioplayer-source" data-src="1.mp3" data-type="audio/mpeg" ></div>
+            </li>
+        </ul>
+    </div>
+    <!-- End of body section HTML codes -->
+
+</div>
+
+    <!-- Start Container -->
+    <div class="container-fluid mt-4" style="display: flex; justify-content: center;">
+
+
+<!-- Start Row -->
+
+<div class="row">
+
+    <div class="col-sm-12">
+
+<div class="card mask rgba-black-light" align="center">
+  <div class="card-body">
+    <button href=""  class="btn btn-unique btl camera" id="toggle"><i class="fas fa-qrcode fa-lg mr-2"></i>Tap to Scan</button>
+    <div style="display: flex; align-self: center; justify-content: center; margin-top: 20px; margin-bottom: -30px;">
+<h5 class="font-weight-bold mb-3 text-white"><div id="content" align="center"><video id="preview"></video></div></h5>
+</div>
+    <h5 class="font-weight-bold mt-4 text-white">OR</h5>
+    <form id="form" class="form-inline" style="justify-content: center;" onsubmit="return myFunction()">
+        <div class="md-form">
+            <input type="text" id="display" class="form-control white-text">
+            <label for="display">Enter Display Number</label>
+        </div>
+          <button class="btn btn-unique btn-rounded btn-sm my-0 waves-effect waves-light" type="submit">Search</button>
+        </form>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+var audio = document.getElementById('audio');
+var title = document.getElementById('data');
+var cont = audio.getAttribute('data-src');
+var titl = title.getAttribute('data-title');
+audio.setAttribute('data-src',c); 
+title.setAttribute('data-title',d); 
+</script>
+<!-- scripts -->
+<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+
+  <script type="text/javascript" src="js/instascan.min.js"></script>
+
+  <script type="text/javascript">load();</script>
+
+  <script type="text/javascript">
+    var myButton = document.getElementById("toggle");
+    myButton.onclick = function(e) {
+
+      let scanner = new Instascan.Scanner({ backgroundScan: false, mirror: false, video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        window.location.href = content;
+        // alert(content);
+      });
+      Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[1]);
+          scanner.stop();
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+    }
+    </script>
+    
+    <script type="text/javascript">
+      function myFunction() {
+        var val = document.getElementById("display").value;
+        if (val.length == 1) {
+        window.location.href = "http://webitech.org/rd/"+"00"+val;
+        return false;
+      }
+      if (val.length == 2) {
+        window.location.href = "http://webitech.org/rd/"+"0"+val;
+        return false;
+      }
+
+      if (val.length == 3) {
+        window.location.href = "http://webitech.org/rd/"+val;
+        return false;
+      }
+
+      }
+    </script>
+
+    <script type="text/javascript">
+var toggle  = document.getElementById("toggle");
+var content = document.getElementById("content");
+
+toggle.addEventListener("click", function() {
+  content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
+});
+</script>
+
+<script type="text/javascript">
+  $('#display').keyup(function(){
+  if ($(this).val() > 9){
+    alert("Display number must be from 1 to 9");
+    $(this).val('');
+  }
+});
+  // $('#display').keypress(function (e) {
+  //       var regex = new RegExp("^[a-zA-Z\s]+$");
+  //       var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+  //       if (regex.test(str)) {
+  //         alert("Alphabets or Spaces are not allowed");
+  //         return false;
+  //       }
+  //     });
+  $('#display').on('input blur paste', function(){
+ $(this).val($(this).val().replace(/\D/g, ''))
+})
+</script>
+</body>
+</html>
