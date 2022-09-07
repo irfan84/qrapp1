@@ -148,7 +148,7 @@ title.setAttribute('data-title',d);
       });
       Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
-          scanner.start(cameras[0]);
+          scanner.start(cameras[1]);
           scanner.stop();
         } else {
           console.error('No cameras found.');
@@ -163,16 +163,16 @@ title.setAttribute('data-title',d);
       function myFunction() {
         var val = document.getElementById("display").value;
         if (val.length == 1) {
-        window.location.href = "http://webitech.org/rd/"+"00"+val;
+        window.location.href = "https://gearscraft.com/rd/"+"00"+val;
         return false;
       }
       if (val.length == 2) {
-        window.location.href = "http://webitech.org/rd/"+"0"+val;
+        window.location.href = "https://gearscraft.com/rd/"+"0"+val;
         return false;
       }
 
       if (val.length == 3) {
-        window.location.href = "http://webitech.org/rd/"+val;
+        window.location.href = "https://gearscraft.com/rd/"+val;
         return false;
       }
 
